@@ -1,11 +1,17 @@
 @import "../../../app/variables.module.scss";
 
+.headerSection {
+  background-color: white;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
   background-color: white;
+  max-width: 1500px;
+  margin: auto;
 
   .searchContainer {
     display: flex;
@@ -72,17 +78,22 @@
 
   .link {
     text-decoration: underline;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 
   span {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
   }
 
   .drop {
     display: flex;
     gap: 10px;
+    padding: 10px;
     border: none;
     background: transparent;
     cursor: pointer;

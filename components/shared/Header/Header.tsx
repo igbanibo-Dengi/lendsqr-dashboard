@@ -21,67 +21,70 @@ const Header = () => {
     };
 
     return (
-        <header className={styles.header}>
 
-            <div className={styles.searchContainer}>
+        <section className={styles.headerSection}>
+            <header className={styles.header}>
 
-                <Image
-                    src={Logo}
-                    alt="Logo"
-                    width={144}
-                    height={30}
-                />
-                <div className={styles.search}>
-                    <input
-                        placeholder='Search for anything'
+                <div className={styles.searchContainer}>
+
+                    <Image
+                        src={Logo}
+                        alt="Logo"
+                        width={144}
+                        height={30}
                     />
-                    <button className={styles.searchButton}>
-                        <Image
-                            src={Search}
-                            width={16}
-                            height={16}
-                            alt='search'
+                    <div className={styles.search}>
+                        <input
+                            placeholder='Search for anything'
                         />
-                        {/* <IoSearchOutline /> */}
-                    </button>
+                        <button className={styles.searchButton}>
+                            <Image
+                                src={Search}
+                                width={16}
+                                height={16}
+                                alt='search'
+                            />
+                            {/* <IoSearchOutline /> */}
+                        </button>
+                    </div>
                 </div>
-            </div>
 
 
-            <div className={styles.profile}>
-                <Link href={'/'} className={styles.link}>Docs</Link>
+                <div className={styles.profile}>
+                    <Link href={'/'} className={styles.link}>Docs</Link>
 
-                <Link href={'/'}>
-                    {/* <Image
+                    <Link href={'/'}>
+                        {/* <Image
                         src={Bell}
                         alt='notifications'
                     /> */}<TfiBell size={24} />
 
-                </Link>
+                    </Link>
 
 
-                <span>
-                    <Image
-                        src={Avatar}
-                        alt='User Avatar'
-                    />
+                    <span>
+                        <Image
+                            src={Avatar}
+                            alt='User Avatar'
+                        />
 
-                    <button className={styles.drop} onClick={toggleDropdown}>
-                        Adedji <IoMdArrowDropdown />
-                    </button>
+                        <button className={styles.drop} onClick={toggleDropdown}>
+                            Adedji <IoMdArrowDropdown />
+                        </button>
 
-                    <div className={`${styles.dropdown} ${isDropdownOpen ? styles.open : ''}`}>
-                        <ul>
-                            <li><Link href="/notifications">Notifications</Link></li>
-                            <li><Link href="/settings">Settings</Link></li>
-                            {/* Add more dropdown items here */}
-                        </ul>
-                    </div>
+                        <div className={`${styles.dropdown} ${isDropdownOpen ? styles.open : ''}`}>
+                            <ul>
+                                <li><Link href="/notifications">Notifications</Link></li>
+                                <li><Link href="/settings">Settings</Link></li>
+                                {/* Add more dropdown items here */}
+                            </ul>
+                        </div>
 
-                </span>
-            </div>
+                    </span>
+                </div>
 
-        </header>
+            </header>
+        </section>
     )
 }
 
