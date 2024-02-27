@@ -1,0 +1,19 @@
+@import "../../app/variables.module.scss";
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+
+  &:focus-visible {
+    outline: 1px solid $primary-color;
+  }
+}
