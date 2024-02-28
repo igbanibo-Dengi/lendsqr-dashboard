@@ -3,12 +3,11 @@ import React, { useState } from 'react';
 import styles from './sidebar.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
-import { dashboardLinks } from '../../../constants/constants'
-import { businessLinks } from '../../../constants/constants'
-import { settingsLink } from '../../../constants/constants'
+import { dashboardLinks, businessLinks, settingsLink } from '../../../constants/constants'
+import { FaRightLeft } from "react-icons/fa6";
 
 const Sidebar = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const toggleOpen = () => {
@@ -25,7 +24,7 @@ const Sidebar = () => {
 
     return (
         <nav className={`${styles.sidebar} ${isSidebarOpen ? styles.open : ''}`}>
-            <button className={styles.barButton} onClick={toggleOpen}>Open</button>
+            <button className={styles.barButton} onClick={toggleOpen}><FaRightLeft /></button>
 
             {isSidebarOpen && (
                 <button className={styles.dropButton} onClick={toggleDropdown}>
@@ -72,9 +71,9 @@ const Sidebar = () => {
 
 
                 {dashboardLinks.map((item, index) => (
-                    <Link className={styles.link} href={item.href} key={index}>
+                    <Link className={styles.link} href='#page' key={index}>
                         <Image
-                            src='/icons/home.svg'
+                            src={item.icon}
                             width={16}
                             height={16}
                             alt='briefcase'
@@ -87,9 +86,9 @@ const Sidebar = () => {
 
 
                 {businessLinks.map((item, index) => (
-                    <Link className={styles.link} href={item.href} key={index}>
+                    <Link className={styles.link} href='#page' key={index}>
                         <Image
-                            src='/icons/home.svg'
+                            src={item.icon}
                             width={16}
                             height={16}
                             alt='briefcase'
@@ -102,9 +101,9 @@ const Sidebar = () => {
 
 
                 {settingsLink.map((item, index) => (
-                    <Link className={styles.link} href={item.href} key={index}>
+                    <Link className={styles.link} href='#page' key={index}>
                         <Image
-                            src='/icons/home.svg'
+                            src={item.icon}
                             width={16}
                             height={16}
                             alt='briefcase'

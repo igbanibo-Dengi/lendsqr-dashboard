@@ -1,99 +1,109 @@
 export const dashboardLinks = [
     {
-        "name": "User 1",
+        "name": "Users",
         "href": "/user1",
-        "icon": "/icons/user1.svg"
+        "icon": "/icons/user-friends.svg"
     },
     {
-        "name": "User 2",
+        "name": "Guarantors",
         "href": "/user2",
-        "icon": "/icons/user2.svg"
+        "icon": "/icons/users.svg"
     },
     {
-        "name": "User 3",
+        "name": "Loans",
         "href": "/user3",
-        "icon": "/icons/user3.svg"
+        "icon": "/icons/sack.svg"
     },
     {
-        "name": "User 4",
+        "name": "Decision Models",
         "href": "/user4",
-        "icon": "/icons/user4.svg"
+        "icon": "/icons/handshake.svg"
     },
     {
-        "name": "User 5",
+        "name": "Savings",
         "href": "/user5",
-        "icon": "/icons/user5.svg"
+        "icon": "/icons/piggy-bank.svg"
     },
     {
-        "name": "User 6",
+        "name": "Loan Requests",
         "href": "/user6",
-        "icon": "/icons/user6.svg"
+        "icon": "/icons/loan.svg"
     },
     {
-        "name": "User 7",
+        "name": "Whitelist",
         "href": "/user7",
-        "icon": "/icons/user7.svg"
+        "icon": "/icons/user-check.svg"
+    },
+    {
+        "name": "Karma",
+        "href": "/user7",
+        "icon": "/icons/user-times.svg"
     }
 ]
 
 
 export const businessLinks = [
     {
-        "name": "User 1",
+        "name": "Organization",
         "href": "/user1",
-        "icon": "/icons/user1.svg"
+        "icon": "/icons/briefcase1.svg"
     },
     {
-        "name": "User 2",
+        "name": "Loan Products",
         "href": "/user2",
-        "icon": "/icons/user2.svg"
+        "icon": "/icons/loan.svg"
     },
     {
-        "name": "User 3",
+        "name": "Savings Products",
         "href": "/user3",
-        "icon": "/icons/user3.svg"
+        "icon": "/icons/bank.svg"
     },
     {
-        "name": "User 4",
+        "name": "Fees and Charges",
         "href": "/user4",
-        "icon": "/icons/user4.svg"
+        "icon": "/icons/coins-solid.svg"
     },
     {
-        "name": "User 5",
+        "name": "Transactions",
         "href": "/user5",
-        "icon": "/icons/user5.svg"
+        "icon": "/icons/transactions.svg"
     },
     {
-        "name": "User 6",
+        "name": "Services",
         "href": "/user6",
-        "icon": "/icons/user6.svg"
+        "icon": "/icons/galaxy.svg"
     },
     {
-        "name": "User 7",
+        "name": "Service Account",
         "href": "/user7",
-        "icon": "/icons/user7.svg"
+        "icon": "/icons/user-cog.svg"
     },
     {
-        "name": "User 8",
+        "name": "Settlements",
         "href": "/user8",
-        "icon": "/icons/user8.svg"
+        "icon": "/icons/scroll.svg"
+    },
+    {
+        "name": "Reports",
+        "href": "/user8",
+        "icon": "/icons/chart-bar.svg"
     }
 ]
 
 export const settingsLink = [
     {
-        "name": "User 1",
+        "name": "Preferences",
         "href": "/user1",
-        "icon": "/icons/user1.svg"
+        "icon": "/icons/sliders.svg"
     },
     {
-        "name": "User 2",
+        "name": "Fees and Pricing",
         "href": "/user2",
-        "icon": "/icons/user2.svg"
+        "icon": "/icons/badge.svg"
     },
     {
-        "name": "User 3",
+        "name": "Audit Logs",
         "href": "/user3",
-        "icon": "/icons/user3.svg"
+        "icon": "/icons/clipboard.svg"
     },
 ]
