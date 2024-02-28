@@ -1,1 +1,12 @@
 @import "../variables.module.scss";
+
+.container {
+  display: flex;
+  height: 100vh;
+  //   padding-top: 80px;
+}
+
+.mainContainer {
+  padding: 80px 10px 50px 10px;
+  width: 100%;
+}
