@@ -107,3 +107,6 @@ export const settingsLink = [
         "icon": "/icons/clipboard.svg"
     },
 ]
+
+
+
