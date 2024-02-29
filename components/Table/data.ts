@@ -159,11 +159,12 @@ export type User = {
     _id: string;
     index: number;
     name: string;
-    organization: string;
+    company: string;
     email: string;
     phone: string
     registered: string;
-    // status: 'ative' | 'inactive' | 'blacklisted' | 'pending'
+    status: 'ative' | 'inactive' | 'blacklisted' | 'pending'
+    // more: any;
 }
 
 

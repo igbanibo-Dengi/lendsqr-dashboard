@@ -32,16 +32,6 @@
   background-color: rgba($primary-color, 0.1);
 }
 
-// .rowInfo {
-//   margin-top: 10px;
-//   font-style: italic;
-// }
-
-// /* Add style for table rows */
-// .tableRow {
-//   border-bottom: 1px solid #ccc;
-// }
-
 .container {
   padding: 10px 50px 50px 20px;
   border-radius: 5px;
@@ -63,3 +53,28 @@
     outline: 1px solid $primary-color;
   }
 }
+
+.cell {
+  &:last-child {
+    padding: 5px;
+    margin-right: -120px;
+  }
+}
+
+.cell:nth-child(6) {
+  text-align: center;
+  padding-left: 50px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+// .head {
+//   &:last-child {
+//     width: 50px;
+//   }
+// }

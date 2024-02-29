@@ -76,7 +76,6 @@ const Header = () => {
                             <ul>
                                 <li><Link href="/notifications">Notifications</Link></li>
                                 <li><Link href="/settings">Settings</Link></li>
-                                {/* Add more dropdown items here */}
                             </ul>
                         </div>
 

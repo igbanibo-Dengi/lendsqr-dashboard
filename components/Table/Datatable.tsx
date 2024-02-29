@@ -14,58 +14,145 @@ import {
     Column,
 } from '@tanstack/react-table'
 
-import { data, User } from './data'
+import { User } from './data'
 import Image from 'next/image'
 import { useVirtualizer } from '@tanstack/react-virtual'
 import Styles from './table.module.scss'
 
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 const Datatable = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [data, setData] = useState([]);
+
+
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
 
     const [pagination, setPagination] = React.useState<PaginationState>({
         pageIndex: 0,
         pageSize: 10,
     })
 
+
+    useEffect(() => {
+        fetch('https://run.mocky.io/v3/e0c7e33e-e141-4511-af91-2b6e9a00eb03')
+            .then(response => response.json())
+            .then(data => {
+                setData(data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     const columns = React.useMemo<ColumnDef<User>[]>(() => [
 
         {
-            accessorFn: row => row.organization,
-            id: 'organization',
+            accessorFn: row => row.company,
+            id: 'company',
             cell: info => info.getValue(),
-            header: () => <span>Organization</span>,
+            header: () => <span className={Styles.header}>Organization
+                <Image
+                    src='/icons/filter-down.svg'
+                    alt='toggle'
+                    width={16}
+                    height={16}
+                />
+            </span>,
             footer: props => props.column.id,
         },
         {
             accessorFn: row => row.name,
             id: 'name',
             cell: info => info.getValue(),
-            header: () => <span>Username</span>,
+            header: () => <span className={Styles.header}>Username
+                <Image
+                    src='/icons/filter-down.svg'
+                    alt='toggle'
+                    width={16}
+                    height={16}
+                />
+            </span>,
             footer: props => props.column.id,
         },
         {
             accessorFn: row => row.email,
             id: 'email',
             cell: info => info.getValue(),
-            header: () => <span>Email</span>,
+            header: () => <span className={Styles.header}>Email
+                <Image
+                    src='/icons/filter-down.svg'
+                    alt='toggle'
+                    width={16}
+                    height={16}
+                />
+            </span>,
             footer: props => props.column.id,
         },
         {
             accessorFn: row => row.phone,
             id: 'phone',
             cell: info => info.getValue(),
-            header: () => <span>Phone</span>,
+            header: () => <span className={Styles.header}>Phone
+                <Image
+                    src='/icons/filter-down.svg'
+                    alt='toggle'
+                    width={16}
+                    height={16}
+                />
+            </span>,
             footer: props => props.column.id,
         },
         {
             accessorFn: row => row.registered,
             id: 'registered',
             cell: info => info.getValue(),
-            header: () => <span>Date joined</span>,
+            header: () => <span className={Styles.header}>Date joined
+                <Image
+                    src='/icons/filter-down.svg'
+                    alt='toggle'
+                    width={16}
+                    height={16}
+                />
+            </span>,
             footer: props => props.column.id,
         },
+        {
+            accessorFn: row => row.status,
+            id: 'status',
+            cell: info => info.getValue(),
+            header: () => <span className={Styles.header}>Status
+                <Image
+                    src='/icons/filter-down.svg'
+                    alt='toggle'
+                    width={16}
+                    height={16}
+                />
+            </span>,
+            footer: props => props.column.id,
+        },
+        {
+            id: "actions",
+            enableHiding: false,
+            cell: ({ row }) => {
+
+                return (
+                    <Image
+                        src='/icons/more.svg'
+                        alt='toggle'
+                        width={16}
+                        height={16}
+                    />
+                )
+            },
+        },
+
     ], [])
 
     const table = useReactTable({
@@ -129,12 +216,13 @@ const Datatable = () => {
                                 return (
                                     <th
                                         key={header.id}
+                                        className={Styles.head}
                                         style={{
                                             display: 'flex',
                                             flexDirection: 'column',
                                             gap: '10px',
-                                            width: header.getSize(),
-                                            padding: '10px',
+                                            // width: header.getSize(),
+                                            padding: '10px 0px',
                                             cursor: 'pointer',
                                         }}
                                     >
@@ -156,7 +244,7 @@ const Datatable = () => {
                                                 header.column.columnDef.header,
                                                 header.getContext()
                                             )}
-
+                                            {/* 
                                             {{
                                                 asc: <Image
                                                     src='/icons/filter-up.svg'
@@ -170,12 +258,15 @@ const Datatable = () => {
                                                     width={16}
                                                     height={16}
                                                 />,
-                                            }[header.column.getIsSorted() as string] ?? <Image
-                                                    src='/icons/filter-down.svg'
-                                                    alt='toggle'
-                                                    width={16}
-                                                    height={16}
-                                                />}
+                                            }[header.column.getIsSorted() as string] ??
+                                                // <Image
+                                                //     src='/icons/filter-down.svg'
+                                                //     alt='toggle'
+                                                //     width={16}
+                                                //     height={16}
+                                                // />
+                                                null
+                                            } */}
 
                                         </div>
                                         {header.column.getCanFilter() ? (
@@ -206,6 +297,7 @@ const Datatable = () => {
                                 style={{
                                     display: 'flex',
                                     justifyContent: 'space-between',
+                                    // gap: '50px',
                                     padding: '20px',
                                     position: 'absolute',
                                     transform: `translateY(${virtualRow.start}px)`,
@@ -216,10 +308,14 @@ const Datatable = () => {
                                     return (
                                         <td
                                             key={cell.id}
+                                            className={Styles.cell}
                                             style={{
                                                 display: 'flex',
+                                                alignItems: 'center',
+                                                // justifyContent: 'space-between',
                                                 width: cell.column.getSize(),
-                                                whiteSpace: 'nowrap'
+                                                // width: '100px',
+                                                whiteSpace: 'nowrap',
                                             }}
                                         >
                                             {flexRender(
@@ -230,6 +326,7 @@ const Datatable = () => {
                                     )
                                 })}
                             </tr>
+
                         )
                     })}
                 </tbody>

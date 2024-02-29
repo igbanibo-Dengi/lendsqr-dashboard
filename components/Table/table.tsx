@@ -29,10 +29,10 @@ const MainTable = () => {
             footer: props => props.column.id,
         },
         {
-            accessorFn: row => row.organization,
-            id: 'organization',
+            accessorFn: row => row.company,
+            id: 'company',
             cell: info => info.getValue(),
-            header: () => <span>Organization</span>,
+            header: () => <span>company</span>,
             footer: props => props.column.id,
         },
         {
