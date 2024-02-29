@@ -244,30 +244,6 @@ const Datatable = () => {
                                                 header.column.columnDef.header,
                                                 header.getContext()
                                             )}
-                                            {/* 
-                                            {{
-                                                asc: <Image
-                                                    src='/icons/filter-up.svg'
-                                                    alt='toggle'
-                                                    width={16}
-                                                    height={16}
-                                                />,
-                                                desc: <Image
-                                                    src='/icons/filter-down.svg'
-                                                    alt='toggle'
-                                                    width={16}
-                                                    height={16}
-                                                />,
-                                            }[header.column.getIsSorted() as string] ??
-                                                // <Image
-                                                //     src='/icons/filter-down.svg'
-                                                //     alt='toggle'
-                                                //     width={16}
-                                                //     height={16}
-                                                // />
-                                                null
-                                            } */}
-
                                         </div>
                                         {header.column.getCanFilter() ? (
                                             <div>
